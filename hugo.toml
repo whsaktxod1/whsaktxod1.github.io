@@ -1,0 +1,4 @@
+baseURL = 'https://whsaktxod1.github.io'
+languageCode = 'ko-kr'
+title = 'whsaktxod1의 Blog'
+theme = 'hugo-paper'
