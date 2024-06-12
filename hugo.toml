@@ -3,3 +3,7 @@ languageCode = 'ko-kr'
 title = 'whsaktxod1의 Blog'
 theme = 'hugo-paper'
 
+[params]
+name = 'whsaktxod1'
+bio = 'whsaktxod1의 Blog'
+favicon = "favicon.ico"
