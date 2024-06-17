@@ -16,7 +16,7 @@
   {{ $site_author := or site.Author.name site.Params.name site.Title }}
   <!---->
   {{ if eq .Kind "page" }}
-  <meta name="description" content="{{ .Summary }}" />
+  <meta name="description" content="{{ .Description }}" />
   <meta name="author" content="{{ or .Params.author $site_author }}" />
   {{ else }}
   <!---->
@@ -26,6 +26,16 @@
   />
   <meta name="author" content="{{ $site_author }}" />
   {{ end }}
+
+  {{/*  NOTE: OG  */}}
+  <meta property="og:type" content="blog" />
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ or .Description site.Params.description }}">
+  <meta property="og:site_name" content="{{ site.Title }}">
+  <meta property="og:locale" content="ko_KR">
+  {{/*  TODO: 이미지 세팅 필요  */}}
+  {{/*  <meta property="og:image" content="https://example.com/image.jpg">  */}}
 
   <!-- CSS & JS -->
   {{ $main := resources.Get "main.css" }}
